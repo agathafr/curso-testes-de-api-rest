@@ -84,3 +84,64 @@ Service e repository são dois componentes comuns na arquitetura de API Rest.
 Antes de reportar um bug ao desenvolvedor o ideal é consultar no log se a inconsistência está no service ou no repository. 
 
 A camada service chama a camada repository que retorna as informações necessárias ao desenvolvimento da funcionalidade que implementa uma regra de negócio. A controller contém as anotações, implementações, retorno do status code e response (em json), necessários para a publicação da funcionalidade remotamente viabilizando o acesso de serviços externos/terceiros e o consumo/consulta dos dados fornecidos. 
+
+## O que são Request e Response
+
+O que acontece por debaixo dos panos para que as caracteristica da API Rest estejam disponíveis e funcionais. 
+
+API Rest expões os serviços ou repositorys que estão no back-end para o mundo através de uma API Remota. Se não fosse uma api desse tipo, seria necessário compilar o código e enviar para outras pessoas que queiram fazer uso de seus recursos. 
+
+O controlador é a interface entre o mundo e os services.
+
+Quem desejar fazer uso da API Rest deverá fazer um GET, uma requisição. Uma requisição é uma consulta para uma URL que pode ou não requerer um parâmetro. 
+
+### Como um software terceiro envia uma requisição para uma API Rest
+
+API Rest abstrai o que existe no back-end para que ele consuma as informações e retorne os dados para o cliente que faz a requisição. 
+
+OBS: Pesquisar como uma API funciona e os conceitos por detrás dela. É preciso entender profundamente o objeto de teste. O que compõe uma requisição? E uma resposta?
+
+Curl possibilita o envio de requisições via HTTP. 
+
+Client é um software que faz requisições a API Rest querendo consumir as informações dela. Ele não conhece a implementação da API. A implementação é abstraída e é disponibilizada para os softwares de externos, uma camada que contém recomendações REST, configurando-a como uma API Restfull.
+
+A definição do que é necessário para buscar viagens, no caso da API de exemplo, é um usuário com credenciais válidas e que seja do tipo Usuário. 
+
+Gerar um token referente ao usuário válido. Token é uma série de caracteres alfanuméricos que possibilita o acesso a um endpoint. 
+
+Para testar o endpoint pede credencias válidas e que seja do tipo Usuário. O time vai fornecer um token para possibilitar a execução dos testes. Em posse do token é possível manusear a API Rest (enviar uma requisição via http que seja direcionada exatamente para o método que retorna todas as viagens ou apenas algumas).
+
+Client externo -> Pode ser uma aplicação com interface gráfica ou uma outra API que queira fazer uso da API que está disponível de maneira remora. 
+
+### Enviando e Recebendo requisições via terminal 
+
+#### Comando que chama a aplicação que serve para envio de requisições e recebimento de respostas
+```bash
+curl  
+``` 
+#### Como montar o comando da requisição
+-X + método que quer chamar + url que quer ter acesso ao endpoint + /api + uri endpoint + -H 'Authorization: '
+
+```bash
+curl -X GET http://localhost:8089/api/v1/viagens -H 'Authorization: token'
+```
+
+É possível encontrar o endereço na aba "Local" e também na documentação de APIs Rest escrita no formato Swagger. 
+
+/api é um endereço padrão da API de exemplo do Antônio.
+
+As informações de endereço são buscadas no Swagger.
+
+Ao teclar 'enter' a requisição é enviada e a resposta aparece logo abaixo entre chaves {}. 
+
+Na requisição não foram enviadas as credenciais e por isso retornou um código de erro. 
+
+O site JSONFORMATTER melhora a visibilidade da response em relação ao terminal. 
+
+### Testes em API
+
+Pensar nas possibilidades que podem ocorrer dentro do endpoint, dentro dos services ou repositorys chamados pelos services. Observar só as requisições e retorno deles, ignora as demais camadas que precisam ser testadas também. Existem várias possibilidades para além do Controller. Podem ocorrer variações no Services ou Repositorys. Técnicas e estratégias de testes podem ser aplicadas no Controller para avaliar outros caminhos que não o "caminho feliz" que fica explicito na implementação. Poderiam ser testadas várias requisições simultâneas ao endpoint, enviar requisição com token de administrador em detrimento de um de usuário, enviar parâmetros que não os listados, colocar valores muito grandes para saber se a API saberia lidar com isso.
+
+Exemplo do professor: Pessoa simulando um software terceiro que quer buscar viagens que estão registradas na API Rest. Enviou uma requisição via GET (que caiu no controlador) para a uri do endpoint, com um token de usuário, entrou dentro do método, passou informações para dentro dele, o método chamou o services que chamou o repository que buscou no banco de dados, trouxe as informações que devolveu pro services que devolveu pro controler e o controlador foi responsável por converter a resposta para json. 
+
+Validar se funcionalmente trouxe os dados esperados e a estrutura. Lista, objetos, se atributos são do tipo inteiro, ou string e se for, se está entre aspas etc. 
