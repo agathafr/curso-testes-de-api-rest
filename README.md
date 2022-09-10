@@ -68,3 +68,19 @@ As características que fazem parte de APIs Rest:
 - Forma de envio de requisições
 - Forma de recebimento de respostas
 - Interação com cabeçalhos e autenticações
+
+## Service, Repository e Controller 
+
+Atrás de uma API existe um software conhecido como back-end, a solução construída, e à frente, existe a interface gráfica pela qual o usuário interage com o software.
+
+No back-end tem coisas comuns a diferentes softwares como, por exemplo, um local que guarda as regras de negócio e outro que guarda regras e mecanismos de contato entre as regras de negócio e persistência de dados. 
+
+Service e repository são dois componentes comuns na arquitetura de API Rest.
+
+"Service" é uma camada dentro do back-end da aplicação que normalmente armazena as regras de negócio.
+
+"Repository" é uma camada da aplicação responsável por intercambiar as informações entre as regras de negócio ou banco de dados. 
+
+Antes de reportar um bug ao desenvolvedor o ideal é consultar no log se a inconsistência está no service ou no repository. 
+
+A camada service chama a camada repository que retorna as informações necessárias ao desenvolvimento da funcionalidade que implementa uma regra de negócio. A controller contém as anotações, implementações, retorno do status code e response (em json), necessários para a publicação da funcionalidade remotamente viabilizando o acesso de serviços externos/terceiros e o consumo/consulta dos dados fornecidos. 
