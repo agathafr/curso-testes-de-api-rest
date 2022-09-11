@@ -380,3 +380,9 @@ Comparar swaggers (antigo e novo) pode ser uma estratégia de verificar a retroc
 
 Baixar e executar o jar do swagger-diff seria uma maneira mais prática de verificar o que mudou entre diferentes versões (assinatura de método, atributos obrigatórios, deleção ou inclusão de endpoints).
 https://github.com/Sayi/swagger-diff/releases/tag/v1.2.2
+
+## Como criar Mock para testes de API Rest?
+
+Mocks servem para reduzir a dependência de serviços externos.
+
+Wiremock é uma ferramenta que permite simular serviços HTTP para que não seja preciso depender deles durante uma fase dos testes, o que ajuda e acelera o processo de desenvolvimento e testes. 
