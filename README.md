@@ -234,9 +234,11 @@ http://localhost:8089/api/v1/viagens/1
 
 ![image](https://user-images.githubusercontent.com/85461130/189527999-10b47e07-b43a-43e5-b509-706e8d577f1d.png)
 
-## Como usar o Insomnia para Testar APIs Rest
+## Manipulando APIs Rest com o uso de ferramentas de interface gráfica
 
-### Insomnia
+### Como usar o Insomnia para Testar APIs Rest
+
+#### Insomnia
 
 Ferramenta de código aberto que objetiva facilitar o design, teste e entrega de APIs Rest
 
@@ -245,3 +247,21 @@ Em Header, é possível usando o "response", buscar informações que estão den
 #### Documentação
 
 https://docs.insomnia.rest/
+
+### Como usar o Postman para Testar APIs Rest
+
+### Postman 
+
+Objetiva simplificar cada etapa da construção de uma API e agilizar a colaboração para que você possa criar APIs melhores - mais rápido. 
+
+#### Construção de requisições no Postman
+
+Menu > Colections (guarda coleções de requests(requisições))
+
+Liga o servidor da api (precisa estar ligado para as requisições funcionarem)
+
+```bash
+mvn sping-boot:run 
+```
+
+A aba "tests" contém os scripts que serão executados após o recebimento da resposta da requisição.
