@@ -339,7 +339,9 @@ Swagger mostra os elementos necessários para interagir com a interface. Como um
 
 As regras de negócio podem estar em um caso de uso, diagrama de sequência, num e-mail, na cabeça de alguém.
 
-Testes funcionais geralmente dizem respeito a valida a conformidade das regras de negócio com o sistema, validar as funções dele. Funções geralmente possuem dados de entrada, processamento e dados de resposta. 
+Testes funcionais geralmente dizem respeito a validação da conformidade das regras de negócio com o sistema, validar as funções dele. Funções geralmente possuem dados de entrada, processamento e dados de resposta. 
+
+### Como identificar o que testar?
 
 A abordagem empírica em testes de software, leva em consideração experiências anteriores ou interpretação de uma regra de negócio, por exemplo. Já a sistemática, leva em consideração o uso de técnicas formais de teste de software para identificar o que testar.
 
@@ -355,3 +357,13 @@ Utilizando a abordagem empírica, o que vem naturalmente a cabeça são as crede
 
 Aplicando uma técnica sistemática, é possível ampliar as possibilidades de teste.
 
+## Como fazer testes de performance em API Rest?
+
+Como uma API Rest responde ao elevado número de requests?
+Com o teste de performance é possível simular uma grande quantidade de requisições, sem precisar recrutar usuários reais para acessarem simultâneamente. 
+
+São testes não funcionais, contam com o já correto funcionamento da aplicação. Busca verificar como um software se comporta com uma carga de usuário definida.
+
+Teste de performance abrenge teste de desempenho, carga, estresse e outras. 
+
+Tempo de resposta de uma API Rest (teste de performance). 
