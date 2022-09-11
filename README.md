@@ -306,3 +306,25 @@ Permutação: combinar as partições de entrada
 ![image](https://user-images.githubusercontent.com/85461130/189539842-75c305d9-10c6-4d60-9f63-bff0f94bd49c.png)
 ![image](https://user-images.githubusercontent.com/85461130/189539884-8bbd38ac-c264-43bc-95ce-8ee15a213baa.png)
 ![image](https://user-images.githubusercontent.com/85461130/189539925-87fec4d3-1d0e-4b87-b126-f4761940f7c4.png)
+
+## Como medir a Cobertura de Testes de API Rest?
+
+Análise de Martin Lopez sobre como pode ser calculada a cobertura de testes de APIs com base em inputs e outputs.
+Cobertura de testes com base em requisitos: Calcula-se a quantidade de requisitos e testes escritos para cada requisito e a partir disso e entende-se o percentual de cobertura. Ex: Se de 10 requisitos, apenas para 5 foram escritos testes, a cobertura é de 50%.
+Ainda existe cobertura com base em riscos, código etc.
+
+Swagger é uma forma de descrever a interface da API Rest. A estratégia de Martin trata de cobrir a interface da API Rest
+
+#### Path
+Conta a quantidade de caminhos (paths, uri) e testes escritos para os caminhos
+
+#### Operation coverage  
+Uso do método com o endpoint
+
+#### Valor do parâmetro 
+Possibilidades de envio de valores. Precisa ter testes para cada um  
+
+### Referências
+https://personal.us.es/amarlop/wp-content/uploads/2019/09/Test_Coverage_Criteria_for_RESTful_Web_APIs.pdf
+
+https://medium.com/revista-dtar/como-verificar-a-cobertura-de-testes-da-api-rest-9e2f745564b
