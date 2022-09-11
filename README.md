@@ -393,3 +393,15 @@ Validar estrutura e corpo da resposta usando JsonSchema. Para isso é necessári
 
 Acessar o site abaixo para gerar o schema de uma response:
 https://www.jsonschema.net/app/schemas/107935
+
+## Como ler logs de APIs Rest? 
+
+Como identificar a causa raiz através de logs.
+
+Logs são registros de eventos e acontecimentos dentro da plataforma. Fica disponível apenas para o time técnico. 
+
+Há vários níveis de log:
+![image](https://user-images.githubusercontent.com/85461130/189553364-f8afdc6f-4319-4321-9df5-08b5fee3ec05.png)
+
+Na estrutura do log devemos buscar o nível do erro e a mensagem
+![image](https://user-images.githubusercontent.com/85461130/189553557-490d0814-9ad0-4ef4-a4d3-a7af90a80586.png)
