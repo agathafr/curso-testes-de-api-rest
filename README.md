@@ -145,3 +145,30 @@ Pensar nas possibilidades que podem ocorrer dentro do endpoint, dentro dos servi
 Exemplo do professor: Pessoa simulando um software terceiro que quer buscar viagens que estão registradas na API Rest. Enviou uma requisição via GET (que caiu no controlador) para a uri do endpoint, com um token de usuário, entrou dentro do método, passou informações para dentro dele, o método chamou o services que chamou o repository que buscou no banco de dados, trouxe as informações que devolveu pro services que devolveu pro controler e o controlador foi responsável por converter a resposta para json. 
 
 Validar se funcionalmente trouxe os dados esperados e a estrutura. Lista, objetos, se atributos são do tipo inteiro, ou string e se for, se está entre aspas etc. 
+
+## Como usar Headers, Swagger e Verbos em APIs Rest
+
+### O que são Headers?
+
+Uma parte dentro da requisição que será enviada ao servidor que carrega informações técnicas que ajudam ele a processar o que está sendo enviado na requisição. 
+
+Quais informações? 
+
+- Content type: Tipo de dado enviado dentro da request
+Exemplo: Resquisições que registram informações precisam definir o tipo como JSON ou XML
+- Autenticação: Define uma authorization e coloca um token para o servidor saber quem está fazendo a request. 
+
+Swagger é uma documentação da interface, formas de interagir com a API Rest construída pelo Antônio, nesse caso. Não é a documentação completa. Podem existir documentações complementares como diagrama de sequência, caso de uso, atividades. O swagger vai mostrar as características da interface de programação de aplicações. 
+
+#### Link para acessar a documentação da API
+
+http://localhost:8089/api/swagger-ui.html
+
+Uma recomendação para definir endpoints é usar um substantivo no plural
+
+POST cria dados ou envia informações sensíveis criptografadas (caso a aplicação utilize o protcolo https)
+GET busca dados
+PUT atualiza
+DELETE apaga
+
+Swagger mostra método, endpoint e conteúdo da requisição (informações que precisam ser enviadas ao fazer a requisição) e a estrutura da resposta que será retornada.
