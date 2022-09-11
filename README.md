@@ -386,3 +386,10 @@ https://github.com/Sayi/swagger-diff/releases/tag/v1.2.2
 Mocks servem para reduzir a dependência de serviços externos.
 
 Wiremock é uma ferramenta que permite simular serviços HTTP para que não seja preciso depender deles durante uma fase dos testes, o que ajuda e acelera o processo de desenvolvimento e testes. 
+
+## Como validar a estrutura do corpo da requisição com JsonSchema
+
+Validar estrutura e corpo da resposta usando JsonSchema. Para isso é necessário fornecer a ele um template do que é esperado.
+
+Acessar o site abaixo para gerar o schema de uma response:
+https://www.jsonschema.net/app/schemas/107935
