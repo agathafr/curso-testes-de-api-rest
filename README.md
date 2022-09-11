@@ -405,3 +405,9 @@ Há vários níveis de log:
 
 Na estrutura do log devemos buscar o nível do erro e a mensagem
 ![image](https://user-images.githubusercontent.com/85461130/189553557-490d0814-9ad0-4ef4-a4d3-a7af90a80586.png)
+
+## Como ir para o próximo nível em testes de API Rest?
+
+Ver ementa do treinamento "Descomplicando Testes de API Rest"
+
+
