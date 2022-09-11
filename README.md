@@ -285,3 +285,24 @@ Tem uma tag com todas as dependências que o projeto precisa. Elas são baixadas
 A dependência do junit será utilizada para estruturar o teste em si. 
 
 O RestAssured da a possibilidade de fazer requisições a APIs Rest e validar suas respostas. 
+
+## Como fazer estratégias de Testes de API Rest 
+
+Estratégias de teste de API Rest = Resquisitos de teste
+Existem modelos para estratégias de teste. Variam a depender da plataforma (web, mobile, desktop)
+
+![image](https://user-images.githubusercontent.com/85461130/189539088-14e6fea5-cf2e-4567-bcc0-1efc28043812.png)
+
+Massa - Dado já restrado dentro da aplicação. 
+Exemplos: Para buscar detalhes de uma viagem, é preciso que já exista uma viagem registrada; Usuário e senha de usuário comum (não administrador)
+
+Mocks são simuladores de serviços reais que sempre ficam disponíveis apesar de não serem muito complexos. 
+
+Abordagens são formas sistemáticas de testar uma aplicação. 
+
+Permutação: combinar as partições de entrada
+
+![image](https://user-images.githubusercontent.com/85461130/189539818-a86cc710-c117-4e2f-9205-127b3399ccfe.png)
+![image](https://user-images.githubusercontent.com/85461130/189539842-75c305d9-10c6-4d60-9f63-bff0f94bd49c.png)
+![image](https://user-images.githubusercontent.com/85461130/189539884-8bbd38ac-c264-43bc-95ce-8ee15a213baa.png)
+![image](https://user-images.githubusercontent.com/85461130/189539925-87fec4d3-1d0e-4b87-b126-f4761940f7c4.png)
