@@ -265,3 +265,23 @@ mvn sping-boot:run
 ```
 
 A aba "tests" contém os scripts que serão executados após o recebimento da resposta da requisição.
+
+## Como automatizar testes de API Rest com RestAssured usando Java e JUnit
+
+Serão criados scripts de teste automatizado capazes de enviar requisições, receber respostas e realizar asserções nelas. 
+
+#### RestAssured 
+
+Biblioteca para criação de scripts de testes automatizados.
+
+Automação da um feedback rápido após alterações no código, deixando o desenvovledor confiante. 
+
+É um contrato entre a aplicação e quem fez o script, ao parar de funcionar, significa que o contrato foi quebrado e ajustes são necessários. 
+
+#### Arquivo pom.xml
+
+Tem uma tag com todas as dependências que o projeto precisa. Elas são baixadas do site do maven repoditory. 
+
+A dependência do junit será utilizada para estruturar o teste em si. 
+
+O RestAssured da a possibilidade de fazer requisições a APIs Rest e validar suas respostas. 
