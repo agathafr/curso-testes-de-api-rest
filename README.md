@@ -367,3 +367,16 @@ São testes não funcionais, contam com o já correto funcionamento da aplicaç�
 Teste de performance abrenge teste de desempenho, carga, estresse e outras. 
 
 Tempo de resposta de uma API Rest (teste de performance). 
+
+## Como fazer testes de compatibilidade em API Rest?
+
+Testes de compatibilidade avaliam se novas funcionalidades funcionam em conjunto com o que o sistema tem de mais antigo. 
+
+É um teste baseado em uma das 8 características de qualidade da ISO25010. O teste de retrocompatibilidade verifica se apesar de atualizações, apps em versões antigas ainda conseguem fazer o consumo da API.
+
+Ao fazer uma atualização na API, o ideal é executar o teste de retrocompatibilidade a fim de verificar se tudo o que já existia antes, continua funcionando para consumidores antigos.
+
+Comparar swaggers (antigo e novo) pode ser uma estratégia de verificar a retrocompatibilidade, mas não é prático e eficiente. 
+
+Baixar e executar o jar do swagger-diff seria uma maneira mais prática de verificar o que mudou entre diferentes versões (assinatura de método, atributos obrigatórios, deleção ou inclusão de endpoints).
+https://github.com/Sayi/swagger-diff/releases/tag/v1.2.2
