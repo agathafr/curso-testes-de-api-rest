@@ -234,3 +234,14 @@ http://localhost:8089/api/v1/viagens/1
 
 ![image](https://user-images.githubusercontent.com/85461130/189527999-10b47e07-b43a-43e5-b509-706e8d577f1d.png)
 
+## Como usar o Insomnia para Testar APIs Rest
+
+### Insomnia
+
+Ferramenta de código aberto que objetiva facilitar o design, teste e entrega de APIs Rest
+
+Em Header, é possível usando o "response", buscar informações que estão dentro de outras requests. 
+
+#### Documentação
+
+https://docs.insomnia.rest/
