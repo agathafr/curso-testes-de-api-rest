@@ -410,4 +410,34 @@ Na estrutura do log devemos buscar o nível do erro e a mensagem
 
 Ver ementa do treinamento "Descomplicando Testes de API Rest"
 
+## Dicas para Entrevistas
 
+Que exigem conhecimento em Testes de API Rest.
+
+![image](https://user-images.githubusercontent.com/85461130/189553837-4e744127-dbf4-4e77-86d6-fbfbd0f3d1e1.png)
+
+Swagger para API Rest:
+Exercitar os endpoints e variar os dados contidos na requisição
+POST para inserção de produtos
+Variar valor do atributo "nome"
+
+Outras formas de testar: RNs, funcional, compatibilidade, analisar logs, estrutura das respostas.
+
+Os principais conceitos de interface de API (como é utilizada):
+Cabeçalho, corpo, método, parâmetros, autenticação. 
+
+Quais são formas de envio de parâmetros para APIs Rest
+Via query, eviado na URI após o símbolo de ?
+Atributo enviado via Path /atributo
+Header authetication
+Body
+
+No swagger está descrita a interface (como utilizar) da API Rest. 
+
+Por detrás da API Rest, existem controllers (recede  infos do mundo exterior (através do curl, postman etc aplicações que consomem a API), services (rns), repositorys (camada de banco de dados).
+
+Ao enviar a requisição, ela caiu no controller que chamou o service que chamou o repository.
+
+Uma forma de testar é pensar de forma aleatória no que testar. Buscar fundamentação teórica para justificar a escolha de cada teste que vai realizar. Ex: Aplquei a partição de equivalência que revelou tais testes". "Testei a compatibilidade que é uma das 8 características de qualidade da ISO". Retrocompatibilidade através do swagger-diff.
+
+Identificar na estratégia de testes os que puderem ser automatizados. 
