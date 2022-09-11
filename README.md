@@ -328,3 +328,30 @@ Possibilidades de envio de valores. Precisa ter testes para cada um
 https://personal.us.es/amarlop/wp-content/uploads/2019/09/Test_Coverage_Criteria_for_RESTful_Web_APIs.pdf
 
 https://medium.com/revista-dtar/como-verificar-a-cobertura-de-testes-da-api-rest-9e2f745564b
+
+## Testes funcionais 
+
+Swagger é uma documentação da interface. Da para visualizar as funcionalidades (representadas pelo controller), em cada controller tem as operações (conjunto de métodos), cada operação tem um método/verbo, ao lado contém o endpoint, dentro do endpoint da para visualizar o que é necessário passar na requisição para consumir o endpoint. É possível visualizar a estrutura das respostas também. 
+
+Essa documentação apenas não basta porque não contém regras de negócio.
+
+Swagger mostra os elementos necessários para interagir com a interface. Como um software pode utilizar a API. 
+
+As regras de negócio podem estar em um caso de uso, diagrama de sequência, num e-mail, na cabeça de alguém.
+
+Testes funcionais geralmente dizem respeito a valida a conformidade das regras de negócio com o sistema, validar as funções dele. Funções geralmente possuem dados de entrada, processamento e dados de resposta. 
+
+A abordagem empírica em testes de software, leva em consideração experiências anteriores ou interpretação de uma regra de negócio, por exemplo. Já a sistemática, leva em consideração o uso de técnicas formais de teste de software para identificar o que testar.
+
+#### Exemplo 
+RN: Apenas administradores podem registrar novas viagens
+Identificar entradas:
+- Credencial (Administrador = Registrar, Usuário = Não registrar e o que mais? Inválida = Não registrar e Expirada = Não registrar)
+As técnicas partição ou classe de equivalência ajudam a pensar em possíveis entradas (abordagem sistemática).
+
+![image](https://user-images.githubusercontent.com/85461130/189547547-b0838549-f392-4c16-9d63-f30be436104f.png)
+
+Utilizando a abordagem empírica, o que vem naturalmente a cabeça são as credenciais Administrador e Usuário.
+
+Aplicando uma técnica sistemática, é possível ampliar as possibilidades de teste.
+
