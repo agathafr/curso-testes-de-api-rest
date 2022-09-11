@@ -173,17 +173,64 @@ DELETE apaga
 
 Swagger mostra método, endpoint e conteúdo da requisição (informações que precisam ser enviadas ao fazer a requisição) e a estrutura da resposta que será retornada.
 
-## Autenticação e Autorização em APIs Rest
-
-### Resumão até então
+## Resumão até então
 - Conhecer o objeto de teste ajuda a ter clareza das técnicas e estratégias de teste a serem aplicadas nele;
 - API Rest é uma camada de interface que abstrai a inteligência que contém no back-end
 - A interface (API) pode seguir recomendações ou protocolos destintos. Ao usar rest, as orientações e recomendações do rest são seguidas para testar uma API Restfull (API que implementa as recomendações Rest)
 - Para interagir com uma API Rest é preciso enviar requisições para obter respostas
 - Existem métodos e endpoints para onde devem ser enviadas requisições. Estas podem ter cabeçalho e corpo. 
 
+## Autenticação e Autorização em APIs Rest
 Ao decidir fazer uma requisição para cadastrar uma viagem, é preciso verificar na documentação da API o que é obrigatório informar nessa requisição e enviar nela. É preciso informar no header o token para autenticação, caso contrário o retorno vai ser de não estar autenticado, não ser alguém que tem permissão para fazer a requisição (acessar o sistema). Isso porque a API Rest é stateless, não preserva o status como as aplicações web, que guarda a sessão. A cada nova interação é preciso se mostrar alguém que pode ter acesso ao que a requisição irá retornar e uma outra validação, posterior, é de autorização a realizar a ação de que trata a requisição que está sendo feita (ex.: requisição para cadastrar uma viagem).
 
 A autenticação é sobre quem você é e autorização sobre o que você pode ou não fazer. 
 
 É importante identificar para cada operação quem tem o perfil que tem autorização para realizá-la.
+
+## Header, Query, Path e Body: Como usar parâmetros em APIs Rest?
+
+Quais são as formas de enviar dados para uma API Rest?
+
+### 4 Formas:
+Através do:
+
+- Header
+- Body 
+- Query
+- Path
+
+```bash
+curl -X POST -is http://localhost:8089/api/v1/viagens -d '{ "acompanhante": "Isabele", "dataPartida": "2021-09-11", "dataRetorno": "2022-09-11", "localDeDestino": "Manaus", "regiao": "Norte" }' -H 'Content-Type: application/json' -H 'Authorization: '
+```
+#### Body
+
+Parâmetro -d usado normalmente em requisições com métodos POST e PUT. Dentro do body é passada uma string, geralmente em formado JSON mas pode ser outros tipos de texto (xml, por exemplo).
+
+```bash
+-d '{ "acompanhante": "Isabele", "dataPartida": "2021-09-11", "dataRetorno": "2022-09-11", "localDeDestino": "Manaus", "regiao": "Norte" }'
+```
+
+#### Header
+Aspas simples, nome: valor.
+
+```bash
+-H 'Content-Type: application/json' -H 'Authorization: '
+```
+
+#### Query
+Após o endpoint colocar uma ? o nome do parâmetro que consta na documentação, =, e o valor a ser enviado. 
+Para colocar mais de um parâmetro, é só acrescentar & e seguir a mesma ideia de colocar o nome do parâmetro, =, e o valor. 
+
+```bash
+http://localhost:8089/api/v1/viagens(fim do endpoint)?regiao=Norte
+```
+#### Path
+
+Passado no endpoint após /
+
+```bash
+http://localhost:8089/api/v1/viagens/1
+```
+
+![image](https://user-images.githubusercontent.com/85461130/189527999-10b47e07-b43a-43e5-b509-706e8d577f1d.png)
+
